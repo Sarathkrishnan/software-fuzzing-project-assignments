@@ -1,0 +1,6 @@
+# environment variables:
+AFL_CUSTOM_INFO_PROGRAM=/home/adit/fuzzing_tiff/install/bin/tiffinfo
+AFL_CUSTOM_INFO_PROGRAM_ARGV=-D -j -c -r -s -w @@
+AFL_CUSTOM_INFO_OUT=/home/adit/fuzzing_tiff/out//default
+# command line:
+'afl-fuzz' '-m' 'none' '-i' '/home/adit/fuzzing_tiff/tiff-4.0.4/test/images/' '-o' '/home/adit/fuzzing_tiff/out/' '-s' '123' '--' '/home/adit/fuzzing_tiff/install/bin/tiffinfo' '-D' '-j' '-c' '-r' '-s' '-w' '@@'

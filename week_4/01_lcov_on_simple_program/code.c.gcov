@@ -1,0 +1,52 @@
+        -:    0:Source:code.c
+        -:    0:Graph:code.gcno
+        -:    0:Data:code.gcda
+        -:    0:Runs:3
+        -:    1:#include <stdio.h>
+        -:    2:
+        3:    3:void processFile(const char* filename) {
+        3:    4:    FILE* file = fopen(filename, "r");
+        3:    5:    if (file == NULL) {
+        1:    6:        printf("Failed to open the file.\n");
+        1:    7:        return;
+        -:    8:    }
+        -:    9:
+        -:   10:    // Read the contents of the file
+        -:   11:    char buffer[100];
+        2:   12:    fgets(buffer, sizeof(buffer), file);
+        2:   13:    printf("File contents: %s", buffer);
+        -:   14:
+        -:   15:    // Simulate branching paths based on file contents
+        2:   16:    if (buffer[0] == 'A') {
+    #####:   17:        printf("File starts with 'A'\n");
+        -:   18:    } else {
+        2:   19:        printf("File does not start with 'A'\n");
+        -:   20:    }
+        -:   21:
+        2:   22:    if (buffer[1] == 'B') {
+    #####:   23:        printf("Second character is 'B'\n");
+        -:   24:    } else {
+        2:   25:        printf("Second character is not 'B'\n");
+        -:   26:    }
+        -:   27:
+        -:   28:    // More branching paths based on file contents
+        2:   29:    if (buffer[2] >= '0' && buffer[2] <= '9') {
+    #####:   30:        printf("Third character is a digit\n");
+        -:   31:    } else {
+        2:   32:        printf("Third character is not a digit\n");
+        -:   33:    }
+        -:   34:
+        2:   35:    fclose(file);
+        -:   36:}
+        -:   37:
+        3:   38:int main(int argc, char* argv[]) {
+        3:   39:    if (argc != 2) {
+    #####:   40:        printf("Usage: %s <file>\n", argv[0]);
+    #####:   41:        return 1;
+        -:   42:    }
+        -:   43:
+        3:   44:    const char* filename = argv[1];
+        3:   45:    processFile(filename);
+        -:   46:
+        3:   47:    return 0;
+        -:   48:}

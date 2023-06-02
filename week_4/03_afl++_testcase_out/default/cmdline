@@ -1,0 +1,8 @@
+/home/adit/fuzzing_tiff/install/bin/tiffinfo
+-D
+-j
+-c
+-r
+-s
+-w
+@@
